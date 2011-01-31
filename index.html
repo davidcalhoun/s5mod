@@ -1,0 +1,187 @@
+<!doctype html>
+<html>
+
+<head>
+<title>HTML5</title>
+<meta charset="utf-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>  
+<!-- metadata -->
+<meta name="generator" content="S5" />
+<meta name="version" content="S5mod 1.0" />
+<!-- configuration parameters -->
+<meta name="defaultView" content="slideshow" />
+<meta name="controlVis" content="hidden" />
+<!-- style sheet links -->
+<link rel="stylesheet" href="ui/default/combined.css" type="text/css" media="projection" id="slideProj" />
+<!-- embedded styles -->
+<style type="text/css" media="all">
+.imgcon {width: 525px; margin: 0 auto; padding: 0; text-align: center;}
+#anim {width: 270px; height: 320px; position: relative; margin-top: 0.5em;}
+#anim img {position: absolute; top: 42px; left: 24px;}
+img#me01 {top: 0; left: 0;}
+img#me02 {left: 23px;}
+img#me04 {top: 44px;}
+img#me05 {top: 43px;left: 36px;}
+
+
+/* style overrides*/
+body { background: #000; color: #ddd; }
+.purple, div#header { 
+  background-color: #999999;
+  background-image: -moz-linear-gradient(top, #999999, #555555); /* FF3.6 */
+  background-image: -webkit-gradient(linear,left top,left bottom,color-stop(0, #999999),color-stop(1, #555555)); /* Saf4+, Chrome */
+  background-image: linear-gradient(top, #999999, #555555);
+            filter: progid:DXImageTransform.Microsoft.gradient(startColorStr='#999999', EndColorStr='#555555'); /* IE6–IE9 */
+}
+
+.gray {
+  background-color: #424242;
+  background-image: -moz-linear-gradient(top, #424242, #919191); 
+  background-image: -webkit-gradient(linear,left top,left bottom,color-stop(0, #424242),color-stop(1, #919191)); 
+            filter:  progid:DXImageTransform.Microsoft.gradient(startColorStr='#424242', EndColorStr='#919191'); 
+        -ms-filter: "progid:DXImageTransform.Microsoft.gradient(startColorStr='#424242', EndColorStr='#919191')";
+}
+
+div#footer {
+  background-color: #555555;
+  background-image: -moz-linear-gradient(top, #555555, #999999); /* FF3.6 */
+  background-image: -webkit-gradient(linear,left top,left bottom,color-stop(0, #555555),color-stop(1, #999999)); /* Saf4+, Chrome */
+  background-image: linear-gradient(top, #555555, #999999);
+            filter: progid:DXImageTransform.Microsoft.gradient(startColorStr='#555555', EndColorStr='#999999'); /* IE6–IE9 */
+}
+
+.slide h1 {
+  background-color: transparent;
+  color: #ddd;
+  padding: 0;
+  margin: 0;
+}
+
+#footer h1, #footer h2, #currentSlide span {
+  color: #ddd;
+}
+
+#controls #navLinks a {
+  background: transparent;
+}
+
+#currentSlide {
+  color: #e5d2ff; 
+}
+
+#slide0 h3 {
+  margin-top: 0.5em;
+}
+
+body {
+  font-size: 18px;
+}
+
+h1 a, h1 a:visited {
+  color: #eeeeee;
+  background: none;
+}
+
+.center {
+  margin-left: auto;
+  margin-right: auto;
+  display: block;
+}
+
+.syntaxhighlighter {
+  font-size: 70% !important; 
+}
+
+.syntaxhighlighter .toolbar {
+  display: none;
+}
+
+#slide0 h1, .slide a {
+  color: #ddd;
+}
+
+.slide a {
+  text-decoration: underline;
+}
+
+</style>
+<!-- S5 JS -->
+<script src="ui/default/slides.js" type="text/javascript"></script>
+<script>
+
+/* mobile touch event support */
+(function(){  
+  var gestureThreshold, addGestureListeners, curX, startGesture, endGesture, touchSupport;
+  
+  gestureThreshold = 30;
+  touchSupport = 'ontouchstart' in window;
+  
+  startGesture = function(e) {
+    touchStartX = e.screenX || e.touches[0].screenX;
+  }
+  
+  endGesture = function(e) {
+    curX = e.screenX || e.changedTouches[0].screenX;
+  
+    if((touchStartX - curX) > gestureThreshold) {         // left
+      go(1);
+    } else if((curX - touchStartX) > gestureThreshold) {  // right
+      go(-1);
+    }
+  }
+  
+  if(touchSupport) {
+    document.addEventListener('touchstart', startGesture, false);
+    document.addEventListener('touchend', endGesture, false);
+  }
+  
+})();
+
+</script>
+<script src="ui/default/sh.js"></script>
+<script>SyntaxHighlighter.all();</script>
+</head>
+<body>
+
+<div class="layout">
+<div id="controls"><!-- DO NOT EDIT --></div>
+<div id="currentSlide"><!-- DO NOT EDIT --></div>
+<div id="header"></div>
+<div id="footer">
+<h1>Footer Title</h1>
+<h2>Footer Name</h2>
+</div>
+
+</div>
+<div class="presentation">
+
+<div class="slide">
+<h1>Title</h1>
+<h3>Name</h3>
+</div>
+
+
+<div class="slide">
+<h1>Title</h1>
+<p>Foo</p>
+<ul>
+  <li>List item 1</li>
+  <li>List item 2</li>
+</ul>
+</div>
+
+<div class="slide">
+<h1>Title 2</h1>
+<p>Fooooooo</p>
+<ul>
+  <li>Bar 1</li>
+  <li>Bar 2</li>
+</ul>
+</div>
+  
+
+</div>
+
+
+</body>
+</html>
